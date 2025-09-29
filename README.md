@@ -24,9 +24,7 @@ Welcome to my GitHub portfolio! I'm a passionate developer learning and building
 [GitHub Repo](https://github.com/Noxiidus/weather-app)
 
 ### 2. JS Algorithms & Data Structures
-![JS Algorithms]
 - Practicing algorithms & data structures  
-- [GitHub Repo]
 
 ---
 
