@@ -17,15 +17,16 @@ Welcome to my GitHub portfolio! I'm a passionate developer learning and building
 ## 💻 Projects
 
 ### 1. Responsive Web Design
-![Responsive Web Design](https://via.placeholder.com/600x300.png?text=Project+Screenshot)
+![Responsive Web Design](<img width="1224" height="820" alt="webdesign-certifacion" src="https://github.com/user-attachments/assets/a1ceaf6a-011e-4357-8a20-5c2bf6803404" />)
+)
 - HTML, CSS, JavaScript  
 - Fully responsive and mobile-friendly  
-- [Live Demo](https://your-live-demo-link.com) | [GitHub Repo](https://github.com/bazsi/responsive-web-project)
+[GitHub Repo](https://github.com/Noxiidus/weather-app)
 
 ### 2. JS Algorithms & Data Structures
-![JS Algorithms](https://via.placeholder.com/600x300.png?text=Project+Screenshot)
+![JS Algorithms]
 - Practicing algorithms & data structures  
-- [GitHub Repo](https://github.com/bazsi/js-algorithms)
+- [GitHub Repo]
 
 ---
 
