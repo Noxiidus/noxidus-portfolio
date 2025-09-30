@@ -30,8 +30,8 @@ Welcome to my GitHub portfolio! I'm a passionate developer learning and building
 
 ## 📊 GitHub Stats
 
-![Bazsi's GitHub Stats](https://github-readme-stats.vercel.app/api?username=bazsi&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=bazsi&layout=compact&theme=radical)
+![Bazsi's GitHub Stats](https://github-readme-stats.vercel.app/api?username=noxiidus&show_icons=true&theme=radical)  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=noxiidus&layout=compact&theme=radical)
 
 ---
 
