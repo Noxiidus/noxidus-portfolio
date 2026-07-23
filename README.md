@@ -2,7 +2,7 @@
 
 # Katona Balázs — `Noxidus`
 
-**Penetration Tester @ KryloneEsport**
+**Penetration Tester · Security Analyst**
 
 Red team offensive testing and blue team digital forensics — Hungary 🇭🇺
 
