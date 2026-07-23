@@ -217,7 +217,7 @@ T1106 (Native API)
 
 ## Security Tooling
 
-### [tracehound](https://github.com/Noxiidus/tracehound) · `Python`
+### [tracehound](https://github.com/Noxiidus/tracehound) · `Python` · **flagship project**
 
 A Linux DFIR triage toolkit — the natural successor to doing these investigations by hand.
 
@@ -225,6 +225,15 @@ Point it at `/var/log`, a mounted image or a folder of collected evidence. It pa
 recognises, merges everything into one UTC-normalised timeline, and applies detection rules that
 turn raw events into findings with MITRE ATT&CK mappings. Output renders as text, JSON, CSV or a
 self-contained HTML report.
+
+| | |
+|---|---|
+| **Artifact parsers** | `auth.log`/`secure`, `wtmp`/`utmp`/`btmp`, `lastlog`, shell history, cron, systemd journal |
+| **Detection rules** | 16, each mapped to MITRE ATT&CK — credential attacks, persistence, privilege abuse, anti-forensics, cross-host |
+| **Multi-host** | Lateral movement, shared attacker infrastructure, patient-zero identification |
+| **Collection** | Dependency-free POSIX collector with clock measurement and collection-time hashing |
+| **Extensibility** | Declarative JSON/YAML rules, tuning config, pluggable parsers |
+| **Quality** | 150+ tests, `mypy --strict`, CI on Python 3.10–3.12, full wiki |
 
 **Design decisions worth calling out:**
 
@@ -245,6 +254,19 @@ is worse than no report.
 *Correlation over restatement.* The highest-severity rule fires when an account is created **and**
 granted administrative rights shortly after. Either event alone is routine administration; the pair
 within a minute is not.
+
+*Refusing to guess.* Multi-host analysis needs to know how far each machine's clock drifted, and
+it is tempting to infer that from when a shared attacker first appears on each host. But a
+25-minute difference could be drift, or the attacker genuinely taking 25 minutes to move — and
+nothing in the artifacts separates them. tracehound therefore never infers a clock offset. It
+applies only what a human measured, marks the rest as unverified, and downgrades any ordering
+claim that falls inside plausible drift. The collector exists partly to make that measurement
+possible, since it can only be taken while the host is still running.
+
+*Absence as evidence.* Rules keyed on events get quieter the more thoroughly an intruder cleans
+up. Three rules invert that — a log that falls silent on a busy host, a `wtmp` ending mid-record,
+a missing shell history for an account that demonstrably ran commands. Each measures against the
+artifact's own baseline and names the innocent explanation alongside the suspicious one.
 
 Fully type-annotated (`mypy --strict`), linted, and tested across Python 3.10–3.12 in CI. Test
 fixtures are generated synthetically — including byte-accurate `wtmp` records — so no real evidence
