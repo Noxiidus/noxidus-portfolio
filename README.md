@@ -1,13 +1,14 @@
 <div align="center">
 
-# Balázs — `Noxidus`
+# Katona Balázs — `Noxidus`
 
-**Penetration Tester · Security Analyst**
+**Penetration Tester @ KryloneEsport**
 
 Red team offensive testing and blue team digital forensics — Hungary 🇭🇺
 
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ankara.herho@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Noxiidus)
+[![Credly](https://img.shields.io/badge/Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white)](https://www.credly.com/users/noxidus)
 
 </div>
 
@@ -243,7 +244,46 @@ responsive layout techniques.
 
 ## Certifications
 
-**freeCodeCamp — Responsive Web Design**
+[![Verify on Credly](https://img.shields.io/badge/Verify_all_badges_on_Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white)](https://www.credly.com/users/noxidus)
+
+### Security
+
+| Certification | Issuer | Issued |
+|---|---|---|
+| **Google Cloud Cybersecurity Certificate** | Google Cloud | Jul 2026 |
+
+Covers security principles in cloud environments — identity and access management, network
+security controls, threat detection and incident response, and compliance frameworks.
+
+### AI & Data
+
+| Certification | Issuer | Issued |
+|---|---|---|
+| **Google AI Professional Certificate** | Google Career Certificates | Jul 2026 |
+| **Google AI Essentials** | Google Career Certificates | Jul 2026 |
+
+<details>
+<summary><b>Component badges</b> — Google AI Professional Certificate</summary>
+
+<br>
+
+| Badge | Issued |
+|---|---|
+| AI Fundamentals | Jul 2026 |
+| AI for App Building | Jul 2026 |
+| AI for Brainstorming and Planning | Jul 2026 |
+| AI for Content Creation | Jul 2026 |
+| AI for Data Analysis | Jul 2026 |
+| AI for Research and Insights | Jul 2026 |
+| AI for Writing and Communicating | Jul 2026 |
+
+</details>
+
+### Web Development
+
+| Certification | Issuer |
+|---|---|
+| **Responsive Web Design** | freeCodeCamp |
 
 ![Responsive Web Design Certification](https://github.com/user-attachments/assets/a1ceaf6a-011e-4357-8a20-5c2bf6803404)
 
