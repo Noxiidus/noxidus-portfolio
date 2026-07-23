@@ -217,6 +217,39 @@ T1106 (Native API)
 
 ## Security Tooling
 
+### [tracehound](https://github.com/Noxiidus/tracehound) · `Python`
+
+A Linux DFIR triage toolkit — the natural successor to doing these investigations by hand.
+
+Point it at `/var/log`, a mounted image or a folder of collected evidence. It parses what it
+recognises, merges everything into one UTC-normalised timeline, and applies detection rules that
+turn raw events into findings with MITRE ATT&CK mappings. Output renders as text, JSON, CSV or a
+self-contained HTML report.
+
+**Design decisions worth calling out:**
+
+*Parsers observe, detections conclude.* A parser turns a log line into a typed event and stops
+there; deciding that twenty of them constitute an attack belongs to a detection rule. Keeping that
+boundary strict means every new artifact source immediately benefits from every existing rule.
+
+*UTC is enforced, not assumed.* The event model rejects naive timestamps outright, so a parser
+cannot accidentally emit local time. This came directly from a forensics case where the standard
+`utmp` helper script renders timestamps via `localtime` — silently shifting an entire investigation
+without ever raising an error.
+
+*Attempts, not log lines.* An early test failure exposed that the brute-force rule was counting log
+lines rather than authentication attempts — a single failed SSH attempt writes three or four lines.
+The fix was to deduplicate by connection, because a report that overstates an attack by threefold
+is worse than no report.
+
+*Correlation over restatement.* The highest-severity rule fires when an account is created **and**
+granted administrative rights shortly after. Either event alone is routine administration; the pair
+within a minute is not.
+
+Fully type-annotated (`mypy --strict`), linted, and tested across Python 3.10–3.12 in CI. Test
+fixtures are generated synthetically — including byte-accurate `wtmp` records — so no real evidence
+is ever committed.
+
 ### [Simple Port Scanner](https://github.com/Noxiidus/Simple-Port-Scanner) · `Python`
 A TCP port scanner written from scratch to understand socket programming, connection handling and
 service enumeration at a level that using `nmap` alone does not teach.
