@@ -80,13 +80,25 @@ This repository is a detailed portfolio. For the short version, see
 ![Nmap](https://img.shields.io/badge/Nmap-4682B4?style=for-the-badge&logo=gnometerminal&logoColor=white)
 ![Metasploit](https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white)
 ![ffuf](https://img.shields.io/badge/ffuf-2E8B57?style=for-the-badge&logo=gnometerminal&logoColor=white)
+![Gobuster](https://img.shields.io/badge/Gobuster-00979D?style=for-the-badge)
+![Amass](https://img.shields.io/badge/OWASP_Amass-1F6FEB?style=for-the-badge&logo=owasp&logoColor=white)
+![Hydra](https://img.shields.io/badge/Hydra-8B0000?style=for-the-badge)
+![John the Ripper](https://img.shields.io/badge/John_the_Ripper-5A5A5A?style=for-the-badge)
+![Hashcat](https://img.shields.io/badge/Hashcat-000000?style=for-the-badge)
+![sqlmap](https://img.shields.io/badge/sqlmap-D9480F?style=for-the-badge)
 
 **Forensics & analysis**
 
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
+![tcpdump](https://img.shields.io/badge/tcpdump-0B7285?style=for-the-badge)
 ![MITRE ATT&CK](https://img.shields.io/badge/MITRE_ATT%26CK-C81D25?style=for-the-badge&logo=mitre&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Sigma](https://img.shields.io/badge/Sigma-3A7CA5?style=for-the-badge)
+![Timesketch](https://img.shields.io/badge/Timesketch-4285F4?style=for-the-badge)
+![plaso](https://img.shields.io/badge/plaso_(log2timeline)-2C3E50?style=for-the-badge)
+![Ghidra](https://img.shields.io/badge/Ghidra-A6120D?style=for-the-badge)
+![radare2](https://img.shields.io/badge/radare2-268BD2?style=for-the-badge)
 ![Capstone](https://img.shields.io/badge/Capstone-5C2D91?style=for-the-badge&logo=gnometerminal&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 **Languages**
 
@@ -109,6 +121,9 @@ This repository is a detailed portfolio. For the short version, see
 
 ![Hack The Box](https://img.shields.io/badge/Hack_The_Box-9FEF00?style=for-the-badge&logo=hackthebox&logoColor=black)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+![mypy](https://img.shields.io/badge/mypy-2A6DB0?style=for-the-badge)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white)
 
@@ -222,18 +237,21 @@ T1106 (Native API)
 A Linux DFIR triage toolkit — the natural successor to doing these investigations by hand.
 
 Point it at `/var/log`, a mounted image or a folder of collected evidence. It parses what it
-recognises, merges everything into one UTC-normalised timeline, and applies detection rules that
-turn raw events into findings with MITRE ATT&CK mappings. Output renders as text, JSON, CSV or a
-self-contained HTML report.
+recognises, merges everything into one UTC-normalised timeline — alongside a timeless `Fact` model
+for state artifacts — and applies detection rules that turn raw events into findings with MITRE
+ATT&CK mappings. Output renders as text, JSON, CSV or a self-contained HTML report, or exports to a
+log2timeline/plaso super-timeline, Timesketch JSONL or Sigma rules.
 
 | | |
 |---|---|
-| **Artifact parsers** | `auth.log`/`secure`, `wtmp`/`utmp`/`btmp`, `lastlog`, shell history, cron, systemd journal |
-| **Detection rules** | 16, each mapped to MITRE ATT&CK — credential attacks, persistence, privilege abuse, anti-forensics, cross-host |
+| **Event parsers** | `auth.log`/`secure`, `wtmp`/`utmp`/`btmp`, `lastlog`, shell history, cron, systemd journal, and plaso super-timelines |
+| **State parsers** | `/etc/passwd`, `/etc/group`, `sudoers`, `authorized_keys`, systemd units — recovered as timeless `Fact`s, not events |
+| **Detection rules** | 20+, each mapped to MITRE ATT&CK — credential attacks, persistence, privilege abuse, backdoor accounts and SSH keys, anti-forensics, cross-host |
+| **Sigma & interop** | Runs a practical subset of the community's Sigma rules; exports to log2timeline/plaso CSV, Timesketch JSONL and Sigma |
 | **Multi-host** | Lateral movement, shared attacker infrastructure, patient-zero identification |
 | **Collection** | Dependency-free POSIX collector with clock measurement and collection-time hashing |
 | **Extensibility** | Declarative JSON/YAML rules, tuning config, pluggable parsers |
-| **Quality** | 150+ tests, `mypy --strict`, CI on Python 3.10–3.12, full wiki |
+| **Quality** | 250+ tests, `mypy --strict`, `ruff`, CI on Python 3.10–3.12, full wiki |
 
 **Design decisions worth calling out:**
 
@@ -267,6 +285,13 @@ possible, since it can only be taken while the host is still running.
 up. Three rules invert that — a log that falls silent on a busy host, a `wtmp` ending mid-record,
 a missing shell history for an account that demonstrably ran commands. Each measures against the
 artifact's own baseline and names the innocent explanation alongside the suspicious one.
+
+*State, not just events.* The most durable evidence an intruder leaves is not something that
+happened at a moment in time but something that simply *is* — a second UID-0 account, a passwordless
+`sudoers` grant, an unrecognised SSH key, a service unit running from `/tmp`. None of these have a
+meaningful timestamp, so forcing them onto a timeline would mean inventing one. They get a separate
+`Fact` model with no time field, and rules that fire even on a host whose logs were wiped, because
+the backdoor is still sitting in the filesystem.
 
 Fully type-annotated (`mypy --strict`), linted, and tested across Python 3.10–3.12 in CI. Test
 fixtures are generated synthetically — including byte-accurate `wtmp` records — so no real evidence
