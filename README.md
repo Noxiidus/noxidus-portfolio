@@ -340,7 +340,7 @@ security controls, threat detection and incident response, and compliance framew
 
 | Certification | Issuer | Issued |
 |---|---|---|
-| **Google AI Professional Certificate** | Google Career Certificates | Jul 2026 |
+| **[Google AI Professional Certificate](https://www.credly.com/badges/1f37596d-2abc-40c0-823d-6886291f4293)** | Google Career Certificates | Jul 2026 |
 | **Google AI Essentials** | Google Career Certificates | Jul 2026 |
 
 <details>
@@ -360,13 +360,17 @@ security controls, threat detection and incident response, and compliance framew
 
 </details>
 
+![Google AI Professional Certificate](assets/google-ai-professional-certificate.png)
+
 ### Web Development
 
 | Certification | Issuer |
 |---|---|
-| **Responsive Web Design** | freeCodeCamp |
+| **[Responsive Web Design](https://www.freecodecamp.org/certification/noxidus/responsive-web-design)** | freeCodeCamp |
+| **[JavaScript Algorithms and Data Structures (v8)](https://www.freecodecamp.org/certification/noxidus/javascript-algorithms-and-data-structures-v8)** | freeCodeCamp |
+| **[JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/certification/noxidus/javascript-algorithms-and-data-structures)** | freeCodeCamp |
 
-![Responsive Web Design Certification](https://github.com/user-attachments/assets/a1ceaf6a-011e-4357-8a20-5c2bf6803404)
+<sub>Certification names link to the freeCodeCamp verification pages.</sub>
 
 ---
 
@@ -400,8 +404,9 @@ Open to discussing offensive security, forensics, and CTFs.
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=noxiidus&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=noxiidus&layout=compact&theme=radical)
+![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Noxiidus&theme=radical)
+![Top Languages](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Noxiidus&theme=radical)
+![Most-used Languages](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Noxiidus&theme=radical)
 
 <sub>All security work shown here was performed in authorized lab environments and CTF platforms.</sub>
 
