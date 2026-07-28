@@ -232,6 +232,46 @@ T1106 (Native API)
 
 ## Security Tooling
 
+### [breachload](https://github.com/Noxiidus/breachload) · `Python` · **flagship project**
+
+An autonomous, safety-gated penetration-testing copilot — the offensive counterpart to tracehound.
+
+Given an authorized target, it drives the standard toolchain (nmap, whatweb, ffuf, nuclei,
+enum4linux-ng, msfvenom), parses each tool's output into a structured model of the engagement, and
+walks a box from reconnaissance through analysis to a written report. It runs fully offline — an
+LLM only makes its planning smarter.
+
+| | |
+|---|---|
+| **Phases** | Auto-chained recon → enumeration → vulnerability analysis, each driven by state |
+| **Safety layer** | Default-deny scope, binary allowlist, argv-only injection guard, risk-classed confirmation gates — 100% test-covered, documented as a frozen contract |
+| **Analysis** | Version→CVE knowledge base and cross-service correlator; NVD 2.0 feed import to grow it |
+| **Offline autopilot** | Payload/technique library, rule-based next-step engine, data-driven attack-chain templates — usable with no API key |
+| **Exploitation** | msfvenom payloads and PoC generation, scope- and confirmation-gated delivery |
+| **Interfaces** | CLI, live FastAPI/WebSocket dashboard, Markdown/PDF reporting with reproduction steps |
+| **Quality** | 199 tests, `ruff`, CI, plugin interface for third-party adapters, full walkthrough |
+
+**Design decisions worth calling out:**
+
+*The model proposes; deterministic code disposes.* The LLM only ever suggests the next action —
+what actually runs is decided by hand-written code: a scope check, a binary allowlist, an injection
+guard. If the model asks for `rm`, a shell pipe, or a target outside scope, it is denied and logged.
+Nothing the model returns is trusted on its own.
+
+*Generation is free; delivery is gated.* Crafting a payload or a PoC touches nothing and is
+unrestricted. Firing it at a target is a separate, EXPLOIT-classed step that passes the same scope
+and confirmation gates as everything else. The safety boundary sits where the tool can cause an
+effect, not where the interesting work happens.
+
+*Useful without an LLM.* An API key makes the planner smarter, but the offline payload library, the
+rule-based suggestion engine and the attack-chain templates produce a concrete, prioritized plan
+with zero external dependencies — which is what most people running it actually have.
+
+*Scope is extracted, not trusted.* Every host, IP, URL, SMB path and `host:port` in a proposed
+command is parsed out and checked before anything runs, so a target can never slip through by hiding
+in an SMB path or carrying a port. That exact gap was found and closed during a security self-review,
+with a regression test to keep it closed.
+
 ### [tracehound](https://github.com/Noxiidus/tracehound) · `Python` · **flagship project**
 
 A Linux DFIR triage toolkit — the natural successor to doing these investigations by hand.
