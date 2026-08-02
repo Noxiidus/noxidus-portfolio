@@ -444,10 +444,6 @@ Open to discussing offensive security, forensics, and CTFs.
 
 <div align="center">
 
-![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Noxiidus&theme=radical)
-![Top Languages](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Noxiidus&theme=radical)
-![Most-used Languages](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Noxiidus&theme=radical)
-
 <sub>All security work shown here was performed in authorized lab environments and CTF platforms.</sub>
 
 </div>
