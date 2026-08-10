@@ -372,9 +372,15 @@ responsive layout techniques.
 | Certification | Issuer | Issued |
 |---|---|---|
 | **Google Cloud Cybersecurity Certificate** | Google Cloud | Jul 2026 |
+| **[Proofpoint Certified AI Data Security Specialist 2026](https://www.credly.com/badges/37796b5b-6eff-4354-9700-e9be6a37d3ad/public_url)** | Proofpoint | Aug 2026 |
 
 Covers security principles in cloud environments — identity and access management, network
 security controls, threat detection and incident response, and compliance frameworks.
+
+The Proofpoint credential focuses on the data-security and compliance challenges introduced by
+generative AI — the threats and misuse patterns around sensitive data, the requirements for
+compliant GenAI adoption, and practical controls for protecting an organisation's data from
+exposure and abuse.
 
 ### AI & Data
 
