@@ -37,6 +37,7 @@ This repository is a detailed portfolio. For the short version, see
 
 - [Areas of Expertise](#areas-of-expertise)
 - [Technical Skills](#technical-skills)
+- [Featured Work — Offensive Security](#featured-work--offensive-security)
 - [Featured Work — Digital Forensics](#featured-work--digital-forensics)
 - [Security Tooling](#security-tooling)
 - [Web Development](#web-development)
@@ -126,6 +127,30 @@ This repository is a detailed portfolio. For the short version, see
 ![mypy](https://img.shields.io/badge/mypy-2A6DB0?style=for-the-badge)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white)
+
+---
+
+## Featured Work — Offensive Security
+
+Completion summaries and writeups live in **[HTB-Writeups](https://github.com/Noxiidus/HTB-Writeups)**.
+
+### Mythical Mini Pro Lab — Completed (3/3 flags)
+
+**Scope:** Multi-machine Active Directory lab · Assumed breach · Mythic C2
+
+An assumed-breach engagement starting with an operational Mythic C2 server and Apollo agent
+callbacks in a multi-domain AD environment. Captured all three flags across two Domain Controllers
+and a Linux file server.
+
+| Technique area | Skills applied |
+|---|---|
+| **C2 operations** | Mythic framework, Apollo agents, Python API automation, GraphQL task management |
+| **Active Directory** | Cross-forest trust exploitation, ADCS certificate abuse, Kerberos authentication |
+| **Lateral movement** | MSSQL-based pivoting, credential chaining, binary transfer via TDS protocol |
+| **Privilege escalation** | MSSQL TRUSTWORTHY abuse, token impersonation, LSASS credential extraction |
+
+The hardest part was DC02: no SMB, no HTTP, no direct file transfer between targets — the SQL
+protocol itself became the only viable data channel for deploying tools to the isolated host.
 
 ---
 
