@@ -392,16 +392,15 @@ responsive layout techniques.
 
 [![Verify on Credly](https://img.shields.io/badge/Verify_all_badges_on_Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white)](https://www.credly.com/users/noxidus)
 
-### Security
+### Security & Network
 
 | Certification | Issuer | Issued |
 |---|---|---|
 | **[Fortinet NSE 3 Certified in Cybersecurity](https://www.credly.com/badges/d5ab188c-4c90-44b6-85f9-c686a41267d2/public_url)** | Fortinet | Aug 2026 |
 | **[Fortinet FortiGate 7.6 Operator](https://www.credly.com/badges/53149549-7858-4f84-bd4a-5d74009f7d09/public_url)** | Fortinet | Aug 2026 |
 | **[Cybersecurity Fundamentals](https://www.credly.com/badges/f3f9d4f7-c964-4f37-992f-e258560c92e2/public_url)** | IBM SkillsBuild | Aug 2026 |
-| **Google Cloud Cybersecurity Certificate** | Google Cloud | Jul 2026 |
-| **[Proofpoint Certified AI Data Security Specialist 2026](https://www.credly.com/badges/37796b5b-6eff-4354-9700-e9be6a37d3ad/public_url)** | Proofpoint | Aug 2026 |
 | **[Pre Security (SEC0)](https://www.credly.com/badges/157f012c-d2f4-4884-8547-eff967b67826/public_url)** | TryHackMe | Aug 2026 |
+| **Google Cloud Cybersecurity Certificate** | Google Cloud | Jul 2026 |
 
 Covers security principles in cloud environments — identity and access management, network
 security controls, threat detection and incident response, and compliance frameworks.
@@ -410,10 +409,15 @@ The Fortinet track adds network-security operations depth — FortiGate firewall
 and configuration, plus the NSE 3 grounding in the modern threat landscape and Fortinet's
 Security Fabric. The IBM SkillsBuild credential rounds out core cybersecurity fundamentals.
 
-The Proofpoint credential focuses on the data-security and compliance challenges introduced by
-generative AI — the threats and misuse patterns around sensitive data, the requirements for
-compliant GenAI adoption, and practical controls for protecting an organisation's data from
-exposure and abuse.
+### AI Security
+
+| Certification | Issuer | Issued |
+|---|---|---|
+| **[Proofpoint Certified AI Data Security Specialist 2026](https://www.credly.com/badges/37796b5b-6eff-4354-9700-e9be6a37d3ad/public_url)** | Proofpoint | Aug 2026 |
+
+Focuses on the data-security and compliance challenges introduced by generative AI — the threats
+and misuse patterns around sensitive data, the requirements for compliant GenAI adoption, and
+practical controls for protecting an organisation's data from exposure and abuse.
 
 ### AI & Data
 
