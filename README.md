@@ -409,6 +409,19 @@ The Fortinet track adds network-security operations depth — FortiGate firewall
 and configuration, plus the NSE 3 grounding in the modern threat landscape and Fortinet's
 Security Fabric. The IBM SkillsBuild credential rounds out core cybersecurity fundamentals.
 
+### Threat Intelligence
+
+| Certification | Issuer | Issued |
+|---|---|---|
+| **[Foundations of Cyber Threat Intelligence](https://www.credly.com/badges/8f0768ac-e36e-4c71-98e5-ff9fb6d2d0e8/public_url)** | AttackIQ | Sep 2026 |
+| **[Advanced Cyber Threat Intelligence Writing: Crafting Actionable Reports](https://www.credly.com/badges/a380a5f9-16d1-4ae5-83ae-6177f0c58fea/public_url)** | AttackIQ | Sep 2026 |
+| **[AttackIQ Academy Threat Whisperer](https://www.credly.com/badges/fc382fb4-8b84-4bf4-a1be-7fdf46b258aa/public_url)** | AttackIQ | Sep 2026 |
+
+The AttackIQ Academy track builds the CTI discipline end to end — the intelligence lifecycle and
+core concepts, then the tradecraft of turning analysis into actionable, decision-ready reporting.
+It maps directly to the threat-intelligence and detection-engineering work in the case studies
+above.
+
 ### AI Security
 
 | Certification | Issuer | Issued |
